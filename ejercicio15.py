@@ -5,7 +5,7 @@ import matplotlib.pylab as plt
 datos=np.loadtxt("valores.txt")
 
 def prob(sig,x):
-    a=np.exp(-0.5*x**2/sig**2)/(sig*np.sqrt(2*np.pi))
+    a=(np.exp(-0.5*x**2/sig**2)/(sig*np.sqrt(2*np.pi)))
     return a
 def sig(datos,sigma):
     b=1.0
@@ -31,9 +31,8 @@ h=np.std(f)
 j=str(g)
 k=str(h)
 i="Valor medio es: "+j+" La desviación estándar es: "+k
-plt.hist(f)
+plt.hist(f,bins=100,density=True)
 plt.xlabel(r'$\sigma$')
 plt.ylabel(r'P($\sigma$|x_k)')
 plt.title(i,fontsize=10)
 plt.savefig("sigma.png")
-print(g)
