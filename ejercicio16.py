@@ -13,7 +13,7 @@ def four(datos):
 	return x
 a=four(datos[:200,3])
 b=datos[:200,0]
-c=np.linspace(np.pi/3,17*np.pi,1152)
+c=np.linspace(np.pi/2,17*np.pi,1152)
 plt.scatter(datos[:,0],datos[:,3], s=2)
 plt.plot(datos[:,0],50*np.cos(c)+50)
 plt.savefig("solar.png")
